@@ -1,0 +1,75 @@
+\documentclass[12pt]{econtex}
+\usepackage{econtexSetup}
+\usepackage{econtexShortcuts}
+
+\newcommand{\splitcell}[2][c]{%
+	\begin{tabular}[c]{@{}c@{}}\strut#2\strut\end{tabular}%
+}
+
+\begin{document}
+
+\begin{verbatimwrite}{./title.tex}
+Time Factors and Rates
+\end{verbatimwrite}
+
+
+\begin{verbatimwrite}{./body.tex}
+
+To make the mapping between continuous time and discrete time straightforward, our 
+convention is that lower-case variables reflect rates while the corresponding upper-case 
+variable is the corresponding factor over a discrete interval of time.  
+
+So, for example, if the annual interest rate is $\rfree=0.03$ or three percent, then 
+the annual interest factor is $\Rfree=1.03$.  
+
+We predefine the following factors:
+\begin{table}[h]
+	\centering
+	\begin{tabular}{||>{\ttfamily}cccc||} 		
+		\hline
+		 Python Code & LaTeX Code & LaTeX Output & Description 
+\\ \hline  \texttt{Rfree}    & \verb|\Rfree|    & $\Rfree$    & The riskfree interest rate 
+\\ \texttt{Risky}    & \verb|\Risky|    & $\Risky$    & The return on a risky asset
+\\ \texttt{Rport}    & \verb|\Rport|    & $\Rport$    & The return on the entire portfolio
+\\	\hline
+	\end{tabular}
+	\caption{Factors}
+	\label{table:Factors}
+\end{table}	
+
+There are a few cases in which we must depart from the scheme in which lower case letters are 
+the rate associated with the corresponding upper case letter, most notably when the conventional
+object is designated by a Greek letter that does not have a widely recognized lower case version.
+
+\newcommand{\DiscFac}{\beta}
+\newcommand{\discRte}{\vartheta}
+\newcommand{\deprRte}{\delta}
+\newcommand{\DieFac}{\pDead}
+\newcommand{\LivFac}{\Alive}
+\newcommand{\PopFac}{\PopGro}
+\newcommand{\popRte}{\popGro}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{||>{\ttfamily}cccc||} 		
+		\hline
+		 Python Code & LaTeX Code & LaTeX Output & Description \\ 
+		\hline
+   \texttt{DeprFac} & \verb|\DeprFac|    & $\DeprFac$    & Depreciation factor
+\\ \texttt{deprRte} & \verb|\deprRte|    & $\deprRte$    & Depreciation rate
+\\ \texttt{DieFac}  & \verb|\DieFac|     & $\DieFac$     & Proportion who die 
+\\ \texttt{LivFac}  & \verb|\LivFac|     & $\LivFac$     & Proportion who do not die $=(1-\DieFac)$
+\\ \texttt{DiscFac} & \verb|\DiscFac|    & $\DiscFac$    & The discount factor: $1/(1+\discRte)$
+\\ \texttt{discRte} & \verb|\discRte|    & $\discRte$    & The discount rate: $\DiscFac^{-1}-1$
+\\ \texttt{PopFac}  & \verb|\PopGro|     & $\PopGro$     & The growth factor for population 
+\\ \texttt{popRte}  & \verb|\popRte|     & $\popRte$     & The growth rate for population
+\\	\hline
+	\end{tabular}
+	\caption{Special Cases: Factors and Rates}
+	\label{table:SpecialFactors}
+\end{table}	
+
+
+\end{verbatimwrite}
+\input ./body.tex
+
+\end{document}

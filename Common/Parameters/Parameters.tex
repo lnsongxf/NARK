@@ -1,0 +1,43 @@
+\documentclass[12pt]{econtex}
+\usepackage{econtexSetup}
+\usepackage{econtexShortcuts}
+
+\newcommand{\splitcell}[2][c]{%
+	\begin{tabular}[c]{@{}c@{}}\strut#2\strut\end{tabular}%
+}
+
+\begin{document}
+
+\begin{verbatimwrite}{./title.tex}
+Other Parameters
+\end{verbatimwrite}
+
+\title{\input ./title}
+
+\date{\today}
+\maketitle 
+
+\begin{verbatimwrite}{./body.tex}
+
+\renewcommand{\kapShare}{\ensuremath{\epsilon}}
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{||>{\ttfamily}cccc||} 		
+		\hline
+		 Python Code & LaTeX Code & LaTeX Output & Description 
+\\ \hline
+   \texttt{CARA} & \verb|\CARA|    & $\CARA$    & Coefficient of Absolute Risk Aversion% $\uFunc(\bullet)=-\CARA e^{-\CARA \bullet}$
+\\ \texttt{CRRA} & \verb|\CRRA|    & $\CRRA$    & Coefficient of Relative Risk Aversion% $\uFunc(\bullet)=(1-\CRRA)^{-1}\bullet^{1-\CRRA}$
+\\ \texttt{kapShare} & \verb|\kapShare|    & $\kapShare$    & Share of capital in $\FFunc(\Kap,\Labor)=\Kap^{\kapShare}\Labor^{1-\kapShare}$
+\\	\hline
+	\end{tabular}
+	\caption{Special Cases: Factors and Rates}
+	\label{table:SpecialFactors}
+\end{table}	
+
+
+\end{verbatimwrite}
+\input ./body.tex
+
+\end{document}
