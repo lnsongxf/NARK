@@ -1,51 +1,49 @@
 
-To make the mapping between continuous time and discrete time straightforward, our
-convention is that lower-case variables reflect rates while the corresponding upper-case
-variable is the corresponding factor over a discrete interval of time.
+  When measuring change over time, lower-case variables reflect rates
+  while the corresponding upper-case variable is the corresponding
+  factor connecting adjacent discrete periods.  (This
+  convention rarely conflicts with the usage we endorse elsewhere of
+  indicating individual-level variables by the lower and aggregate
+  variables by the upper case).\footnote{If there is a need for the continuous-time
+representation, we endorse use of the discrete-time rate defined below.  Any
+author who needs a continuous-time rate, a discrete-time rate, and a discrete-time factor
+is invited to invent their own notation.}
 
 So, for example, if the annual interest rate is $\rfree=0.03$ or three percent, then
-the annual interest factor is $\Rfree=1.03$.
+the annual interest factor is $\Rfree=1.03$.%\footnote{In the rare cases where it is necessary to distinguish between a continuous-time rate and a discrete-time rate -- for example, when there is an analytical result available in continuous time -- the variable in question can be modified by \texttt{Cnt} or \texttt{Dsc}.}
 
 We predefine the following factors:
 \begin{table}[h]
 	\centering
-	\begin{tabular}{||>{\ttfamily}cccc||}
+	\begin{tabular}{|ccc|}
 		\hline
-		 Python Code & LaTeX Code & LaTeX Output & Description
-\\ \hline  \texttt{Rfree}    & \verb|\Rfree|    & $\Rfree$    & The riskfree interest rate
-\\ \texttt{Risky}    & \verb|\Risky|    & $\Risky$    & The return on a risky asset
-\\ \texttt{Rport}    & \verb|\Rport|    & $\Rport$    & The return on the entire portfolio
+Code    & Output & Description
+\\ \hline
+   \verb|\Rfree| & $\Rfree$     & Riskfree interest factor
+\\ \verb|\rfree| & $\rfree$     & Riskfree interest return
+\\ \verb|\Risky| & $\Risky$     & The return factor on a risky asset
+\\ \verb|\risky| & $\risky$     & The return rate on a risky asset
+\\ \verb|\Rport| & $\Rport$     & The return factor on the entire portfolio
+\\ \verb|\rport| & $\rport$     & The return rate on the entire portfolio
 \\	\hline
 	\end{tabular}
 	\caption{Factors}
 	\label{table:Factors}
 \end{table}
 
-There are a few cases in which we must depart from the scheme in which lower case letters are
-the rate associated with the corresponding upper case letter, most notably when the conventional
-object is designated by a Greek letter that does not have a widely recognized lower case version.
-
-\newcommand{\DiscFac}{\beta}
-\newcommand{\discRte}{\vartheta}
-\newcommand{\deprRte}{\delta}
-\newcommand{\DieFac}{\pDead}
-\newcommand{\LivFac}{\Alive}
-\newcommand{\PopFac}{\PopGro}
-\newcommand{\popRte}{\popGro}
+We depart from the upper-lower case scheme when the conventional
+when the natural letter to use has an even more natural or urgent use elsewhere in our scheme.
+A particularly common example occurs in the case of models like \cite{blanchardFinite} in which
+individual agents are subject to a Poisson probability of death.  Because death was common in the
+middle ages, we use the archaic Gothic font for the death rate; and the probability of survival is the cancellation of the probability of death:
 \begin{table}[h]
 	\centering
-	\begin{tabular}{||>{\ttfamily}cccc||}
+	\begin{tabular}{|>{\ttfamily}cccl|}
 		\hline
-		 Python Code & LaTeX Code & LaTeX Output & Description \\
+		 Code & LaTeX & Description &  \\
 		\hline
-   \texttt{DeprFac} & \verb|\DeprFac|    & $\DeprFac$    & Depreciation factor
-\\ \texttt{deprRte} & \verb|\deprRte|    & $\deprRte$    & Depreciation rate
-\\ \texttt{DieFac}  & \verb|\DieFac|     & $\DieFac$     & Proportion who die
-\\ \texttt{LivFac}  & \verb|\LivFac|     & $\LivFac$     & Proportion who do not die $=(1-\DieFac)$
-\\ \texttt{DiscFac} & \verb|\DiscFac|    & $\DiscFac$    & The discount factor: $1/(1+\discRte)$
-\\ \texttt{discRte} & \verb|\discRte|    & $\discRte$    & The discount rate: $\DiscFac^{-1}-1$
-\\ \texttt{PopFac}  & \verb|\PopGro|     & $\PopGro$     & The growth factor for population
-\\ \texttt{popRte}  & \verb|\popRte|     & $\popRte$     & The growth rate for population
+   \verb|\DieFac|     & $\DieFac$     & Proportion who die  &
+\\ \verb|\LivFac|     & $\LivFac$     & Proportion who do not die $=(1-\DieFac)$ &
 \\	\hline
 	\end{tabular}
 	\caption{Special Cases: Factors and Rates}

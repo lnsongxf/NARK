@@ -1,40 +1,56 @@
 \documentclass{econtex}
 \usepackage{econtexSetup}
+\usepackage{econtexShortcuts}
 
 \begin{document}
 
 \begin{verbatimwrite}{./body.tex}
 
-The variable definitions below are intended to designate the most common usages of letters in the Roman alphabet.  Of course, contributors can use any of these for other purposes, but we prefer that a non-single-letter designation be used when an alternative is contemplated.  For example, please do not use $W$ for wealth (if some measure of wealth is needed); instead use, say, \texttt{Wlth} or \texttt{Wealth}. 
+In a just universe, anyone who used a single Roman letter for a variable name would roast in search-and-replace hell for an eternity.
+
+It is only slightly less boneheaded to name a variable after a letter in another commonly used alphabet (say, \texttt{delta}).  Your future self (and other users) will not know which of the many possible meanings of $\delta$ you had in mind.
+
+But brevity is a virtue.  A single letter {\it in combination with a modifier or two} (`\texttt{cLvlMin}' as the minimum level of individual consumption, say) is fine -- so long as the reader has some reason to expect that the letter \texttt{c} signifies the level of consumption of an individual.  
+
+That is the spirit in which we offer preferred interpretations for the Roman letters below.  The upper case 
+version generally should be interpreted as reflecting an aggregated version of the variable (at the level of the whole economy, or of the whole market being studied), while the lower case indicates the level of an individual consumer or firm or other entity.
+
+When an alternative object with a meaning similar to, but distinct from, the definitions below is needed, please use a multi-letter name to represent it.  For example, please do not use $W$ for wealth (if some measure of wealth that differs from $\ALev$, $\BLev$, $\HLev$, or $\NLev$ is needed); instead use, say, \texttt{Wlth} or \texttt{Wealth}. 
+
+\pagebreak
 
 \begin{table}[h]
-\begin{tabular}{rcl}
-    \texttt{A} & - & {\it A}ssets {\it A}fter {\it A}ll {\it A}ctions {\it A}ccomplished (end of period)
-\\  \texttt{B} & - & {\it B}eginning {\it B}ank {\it B}alances {\it B}efore any {\it B}ehavior (beginning-of-period)
-\\  \texttt{C} & - & {\it C}onsumption {\it C}hoice {\it C}onnects $B$ to $A$
-\\  \texttt{D} & - & Debt
-\\  \texttt{E} & - & Labor Effort
-\\  \texttt{F} & - & Production
-\\  \texttt{G} & - & Growth 
-\\  \texttt{H} & - & Human wealth
-\\  \texttt{I} & - & Investment
-\\  \texttt{J} & - & Ad{\it J}ustment costs (e.g., in a $Q$ model)
-\\  \texttt{K} & - & Capital/beginning of period nonhuman assets
-\\  \texttt{L} & - & Labor supply
-\\  \texttt{M} & - & Market resources (capital, capital income, and labor income)
-\\  \texttt{N} & - & Net wealth including human wealth ($=B + H$)
-\\  \texttt{P} & - & Permanent noncapital income
-\\  \texttt{Q} & - & Hayashi/Abel $Q$
-\\  \texttt{R} & - & {\it R}eturn
-\\  \texttt{S} & - & State
-\\  \texttt{T} & - & Taxes
-\\  \texttt{U} & - & Utility
-\\  \texttt{V} & - & Value
-\\  \texttt{W} & - & Wage
-\\  \texttt{X} & - & Expenditures (as distinct from consumption; e.g., for durables)
-\\  \texttt{Y} & - & Labor income
-\\  \texttt{Z} & - & Lei{\it Z}ure in consumption/leisure tradeoff
+\begin{center}
+\begin{tabular}{lcl} \\
+    \ALev & - & {\it A}ssets {\it A}fter {\it A}ll {\it A}ctions {\it A}ccomplished% (end of period)
+\\  \BLev & - & {\it B}eginning {\it B}ank {\it B}alances {\it B}efore any {\it B}ehavior (beginning-of-period)
+\\  \CLev & - & {\it C}onsumption {\it C}hoice {\it C}onnects $B$ to $A$
+\\  \DLev & - & Debt
+\\  \ELev & - & Labor {\it E}ffort
+\\  \FLev & - & Production {\it F}unction
+\\  \GLev & - & {\it G}rowth 
+\\  \HLev & - & {\it H}uman wealth
+\\  \ILev & - & {\it I}nvestment
+\\  \JLev & - & Ad{\it J}ustment costs (e.g., in a $Q$ model)
+\\  \KLev & - & Capital or beginning of period nonhuman assets
+\\  \LLev & - & {\it L}abor supply
+\\  \MLev & - & {\it M}arket resources (the sum of capital, capital income, and labor income)
+\\  \NLev & - & {\it N}et wealth including human wealth ($=B + H$)
+\\  \PLev & - & {\it P}ermanent noncapital income
+\\  \QLev & - & Hayashi/Abel $Q$ (or similar asset price)
+\\  \RLev & - & {\it R}eturn
+\\  \SLev & - & Do NOT use for ``saving'' or ``savings'' or the ``saving rate'' -- too confusing
+\\  \TLev & - & {\it T}axes
+\\  \ULev & - & {\it U}tility
+\\  \VLev & - & {\it V}alue
+\\  \WLev & - & {\it W}age
+\\  \XLev & - & e{\it X}penditures (as distinct from consumption; e.g., for durables)
+\\  \YLev & - & Noncapital income (usually, the sum of transfer and labor income)
+\\  \ZLev & - & Lei{\it Z}ure in consumption/leisure tradeoff
 \end{tabular}
+\end{center}
+\caption{Roman Letters}
+\label{table:RomanLetters}
 \end{table}
 
 \end{verbatimwrite}

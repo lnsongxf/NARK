@@ -8,23 +8,25 @@ The following are useful across many contexts:
 \\ \texttt{Ind} & - & Value of something at the level of an individual (as opposed to \texttt{Agg})
 \\ \texttt{Lvl} & - & Level
 \\ \texttt{Rto} & - & Ratio
-\\ \texttt{Bot} & - & Lower Value in some range
-\\ \texttt{Top} & - & Upper Value in some range
-\\ \texttt{Min} & - & Minimum possible Value
-\\ \texttt{Max} & - & Maximum possible Value
-\\ \texttt{Shk} & - & Shock to the variable being modified
+\\ \texttt{Bot} & - & Lower value in some range
+\\ \texttt{Top} & - & Upper value in some range
+\\ \texttt{Min} & - & Minimum possible value
+\\ \texttt{Max} & - & Maximum possible value
+\\ \texttt{Cnt} & - & Continuous-time value
+\\ \texttt{Dsc} & - & Discrete-time value
+\\ \texttt{Shk} & - & Shock
 \\ 	\hline
 	\end{tabular}
 	\caption{General Purpose Modifiers}
 	\label{table:General}
 \end{table}
 
-Shocks will generally be represented by finite vectors of outcomes and their probabilities.  For example, permanent income is called \texttt{Perm} and shocks are designated \texttt{Shk}
+Shocks will generally be represented by finite vectors of outcomes and their probabilities.  For example, permanent income is called \texttt{Perm} and shocks are designated \texttt{PermShk}
 \begin{table}[h]
 	\centering
 	\begin{tabular}{||>{\ttfamily}ccc||}
 		\hline
-\texttt{Prbs} & - & Probabilities of outcomes (generally a vector, e.g. \texttt{PermShkPrbs} for permanent shocks)
+\texttt{Prbs} & - & Probabilities of outcomes (e.g. \texttt{PermShkPrbs} for permanent shock vector)
 \\ \texttt{Vals} & - & Values (e.g., mean one shock satisfies \texttt{PermShkVals} . \texttt{PermShkPrbs} = 1)
 \\ 	\hline
 	\end{tabular}
@@ -35,8 +37,8 @@ Shocks will generally be represented by finite vectors of outcomes and their pro
 
 
 Timing can be confusing because there can be multiple ordered steps
-within a `period.'  We will use \texttt{Prev}, \texttt{Pres}, \texttt{Next} to refer
-to the current steps within a period, and $t$ variables to refer to succeeding periods.
+within a `period.'  We will use \texttt{Prev}, \texttt{Curr}, \texttt{Next} to refer
+to steps relative to the local moment within a period, and $t$ variables to refer to succeeding periods:
 \begin{table}[h]
 	\centering
 	\begin{tabular}{||>{\ttfamily}ccc||}
@@ -51,7 +53,6 @@ to the current steps within a period, and $t$ variables to refer to succeeding p
 \\ \textit{[object]}Next & - & object in next subperiod
 \\	\hline
 	\end{tabular}
-
 	\caption{Timing}
 	\label{table:Timing}
 \end{table}
@@ -71,3 +72,5 @@ Anl & - & The analytical result
 	\caption{}
 	\label{table:AnlVsNum}
 \end{table}
+
+
