@@ -6,41 +6,42 @@
 
 \begin{verbatimwrite}{./body.tex}
 
-In a just universe, anyone who used a single Roman letter for a variable name would roast in search-and-replace hell for an eternity.
+With a few exceptions articulated below, we strongly discourage contributors from using single-letter variable names.  The many reasons for this advice are presented {\it ad nauseum} in introductory computer programming texts (which, we know, few economists consult), so we will not enumerate them here, except to point out that the extent to which your code will be influential depends upon the extent to which someone else can easily read it, which is harder if you have used variable names which could mean almost anything.
 
 It is only slightly less boneheaded to name a variable after a letter in another commonly used alphabet (say, \texttt{delta}).  Your future self (and other users) will not know which of the many possible meanings of $\delta$ you had in mind.
 
-But brevity is a virtue.  A single letter {\it in combination with a modifier or two} (`\texttt{cLvlMin}' as the minimum level of individual consumption, say) is fine -- so long as the reader has some reason to expect that the letter \texttt{c} signifies the level of consumption of an individual.  
+But, brevity is a virtue.  A single letter {\it in combination with a modifier or two} (`\texttt{cLvlMin}' as the minimum level of individual consumption, say) is fine -- so long as the reader has some reason to expect that the lower-case letter \texttt{c} signifies the level of consumption of an individual.  
 
-That is the spirit in which we offer preferred interpretations for the Roman letters below.  The upper case 
-version generally should be interpreted as reflecting an aggregated version of the variable (at the level of the whole economy, or of the whole market being studied), while the lower case indicates the level of an individual consumer or firm or other entity.
+That is the spirit in which we offer preferred interpretations for the Roman letters below.  The upper case version is an aggregated version of the variable (at the level of the whole economy, say, or of the whole market being studied), while the lower case indicates the level of an individual consumer or firm or other subaggregate entity.  Any exceptions to this rule are explicitly noted.
 
-When an alternative object with a meaning similar to, but distinct from, the definitions below is needed, please use a multi-letter name to represent it.  For example, please do not use $W$ for wealth (if some measure of wealth that differs from $\ALev$, $\BLev$, $\HLev$, or $\NLev$ is needed); instead use, say, \texttt{Wlth} or \texttt{Wealth}. 
+When an alternative is needed with a meaning similar to, but distinct from, the definitions below, please use a multi-letter name to represent it.  For example, please do not use $W$ for wealth (if some measure of wealth that differs from $\ALev$, $\BLev$, $\HLev$, or $\NLev$ is needed); instead use, say, \texttt{Wlth} or \texttt{Wealth}.  (Some exemplars follow in a subsequent section).
 
+Finally, some of the definitions below are prohibitions; these are based on many years of experience which have shown that use of the prohibited variable name generates more confusion than clarity.  
 \pagebreak
 
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{lcl} \\
-    \ALev & - & {\it A}ssets {\it A}fter {\it A}ll {\it A}ctions {\it A}ccomplished% (end of period)
-\\  \BLev & - & {\it B}eginning {\it B}ank {\it B}alances {\it B}efore any {\it B}ehavior (beginning-of-period)
+    \ALev & - & {\it A}ssets {\it A}fter {\it A}ll {\it A}ctions have been {\it A}ccomplished (end of period)
+\\  \BLev & - & {\it B}eginning {\it B}ank {\it B}alances {\it B}efore any {\it B}ehavior ({\it b}eginning-of-period)
 \\  \CLev & - & {\it C}onsumption {\it C}hoice {\it C}onnects $B$ to $A$
-\\  \DLev & - & Debt
-\\  \ELev & - & Labor {\it E}ffort
+\\  \DLev & - & {\it D}ebt
+\\  \ELev & - & PROHIBITED:  Too many possible meanings (expectations, effort, expenses)
 \\  \FLev & - & Production {\it F}unction
 \\  \GLev & - & {\it G}rowth 
 \\  \HLev & - & {\it H}uman wealth
 \\  \ILev & - & {\it I}nvestment
 \\  \JLev & - & Ad{\it J}ustment costs (e.g., in a $Q$ model)
 \\  \KLev & - & Capital or beginning of period nonhuman assets
-\\  \LLev & - & {\it L}abor supply
+\\  \LLev & - & PROHIBITED: Is it Labor or Leisure or Land or ...?
 \\  \MLev & - & {\it M}arket resources (the sum of capital, capital income, and labor income)
 \\  \NLev & - & {\it N}et wealth including human wealth ($=B + H$)
-\\  \PLev & - & {\it P}ermanent noncapital income
+\\  \OLev & - & PROHIBITED: Too similar to the number 0; too many possible meanings
+\\  \PLev & - & PROHIBITED: Is it prices, permanent income, present value, profits, ...?
 \\  \QLev & - & Hayashi/Abel $Q$ (or similar asset price)
-\\  \RLev & - & {\it R}eturn
-\\  \SLev & - & Do NOT use for ``saving'' or ``savings'' or the ``saving rate'' -- too confusing
-\\  \TLev & - & {\it T}axes
+\\  \RLev & - & {\it R}eturn (see the variants articulated below)
+\\  \SLev & - & PROHIBITED: ``saving'' (flow)? or ``savings'' (stock)? or the ``saving rate'' (ratio)?
+\\  \TLev & - & This is a tough one.  See the discussion below.
 \\  \ULev & - & {\it U}tility
 \\  \VLev & - & {\it V}alue
 \\  \WLev & - & {\it W}age
@@ -52,6 +53,11 @@ When an alternative object with a meaning similar to, but distinct from, the def
 \caption{Roman Letters}
 \label{table:RomanLetters}
 \end{table}
+
+The letter $\TLev$ is a special case.  We reserve the capital letter to designate the end of 
+the horizon (death, or the end of the economy, occurs at the end of period $\TLev$).  The lower case version $t$ is so ubiquitiously
+used as the current time period that we do not want to resist the overwhelming force of 
+tradition to prohibit its use in that capacity.  
 
 \end{verbatimwrite}
 \input ./body.tex

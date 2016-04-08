@@ -15,19 +15,16 @@ Time Factors and Rates
 \begin{verbatimwrite}{./body.tex}
 
   When measuring change over time, lower-case variables reflect rates
-  while the corresponding upper-case variable is the corresponding
-  factor connecting adjacent discrete periods.  (This
+  while the corresponding upper-case variable connects adjacent discrete periods.\footnote{This
   convention rarely conflicts with the usage we endorse elsewhere of
   indicating individual-level variables by the lower and aggregate
-  variables by the upper case).\footnote{If there is a need for the continuous-time 
+  variables by the upper case.}$^{,}$\footnote{If there is a need for the continuous-time 
 representation, we endorse use of the discrete-time rate defined below.  Any
 author who needs a continuous-time rate, a discrete-time rate, and a discrete-time factor
-is invited to invent their own notation.}
-
-So, for example, if the annual interest rate is $\rfree=0.03$ or three percent, then 
+is invited to invent their own notation.}  So, for example, if the annual interest rate is $\rfree=0.03$ or three percent, then 
 the annual interest factor is $\Rfree=1.03$.%\footnote{In the rare cases where it is necessary to distinguish between a continuous-time rate and a discrete-time rate -- for example, when there is an analytical result available in continuous time -- the variable in question can be modified by \texttt{Cnt} or \texttt{Dsc}.}
 
-We predefine the following factors:
+
 \begin{table}[h]
 	\centering
 	\begin{tabular}{|ccc|} 		
@@ -40,14 +37,18 @@ Code    & Output & Description
 \\ \verb|\risky| & $\risky$     & The return rate on a risky asset
 \\ \verb|\Rport| & $\Rport$     & The return factor on the entire portfolio
 \\ \verb|\rport| & $\rport$     & The return rate on the entire portfolio
+\\ \verb|\rport| & $\rport$     & The return rate on the entire portfolio
+\\ \verb|\RSave| & $\RSave$     & Return factor earned on positive end-of-period assets
+\\ \verb|\rsave| & $\rsave$     & Return rate earned on positive end-of-period assets
+\\ \verb|\RBoro| & $\RBoro$     & Return factor paid on debts
+\\ \verb|\rboro| & $\rboro$     & Return rate paid on debts 
 \\	\hline
 	\end{tabular}
-	\caption{Factors}
+	\caption{Factors and Rates}
 	\label{table:Factors}
 \end{table}	
 
-We depart from the upper-lower case scheme when the conventional
-when the natural letter to use has an even more natural or urgent use elsewhere in our scheme.
+We depart from the upper-lower case scheme when the natural letter to use has an even more natural or urgent use elsewhere in our scheme.
 A particularly common example occurs in the case of models like \cite{blanchardFinite} in which 
 individual agents are subject to a Poisson probability of death.  Because death was common in the 
 middle ages, we use the archaic Gothic font for the death rate; and the probability of survival is the cancellation of the probability of death:
@@ -57,8 +58,8 @@ middle ages, we use the archaic Gothic font for the death rate; and the probabil
 		\hline
 		 Code & LaTeX & Description &  \\ 
 		\hline
-   \verb|\DieFac|     & $\DieFac$     & Proportion who die  & 
-\\ \verb|\LivFac|     & $\LivFac$     & Proportion who do not die $=(1-\DieFac)$ & 
+   \verb|\DieFac|     & $\DieFac$     & Probabilty of death & 
+\\ \verb|\LivFac|     & $\LivFac$     & Probability to not die $=(1-\DieFac)$ & 
 \\	\hline
 	\end{tabular}
 	\caption{Special Cases: Factors and Rates}
@@ -68,5 +69,8 @@ middle ages, we use the archaic Gothic font for the death rate; and the probabil
 
 \end{verbatimwrite}
 \input ./body.tex
+
+
+\input econtexBibMake
 
 \end{document}

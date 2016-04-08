@@ -4,17 +4,21 @@ The following are useful across many contexts:
 	\centering
 	\begin{tabular}{||>{\ttfamily}ccc||}
 		\hline
-   \texttt{Agg} & - & Value of something at the aggregate level (as opposed to \texttt{Ind})
-\\ \texttt{Ind} & - & Value of something at the level of an individual (as opposed to \texttt{Agg})
-\\ \texttt{Lvl} & - & Level
-\\ \texttt{Rto} & - & Ratio
-\\ \texttt{Bot} & - & Lower value in some range
-\\ \texttt{Top} & - & Upper value in some range
-\\ \texttt{Min} & - & Minimum possible value
-\\ \texttt{Max} & - & Maximum possible value
-\\ \texttt{Cnt} & - & Continuous-time value
-\\ \texttt{Dsc} & - & Discrete-time value
-\\ \texttt{Shk} & - & Shock
+   \textit{[object]}\texttt{Agg} & - & Value of something at the aggregate level (as opposed to \texttt{Ind})
+\\ \textit{[object]}\texttt{Ind} & - & Value of something at the level of an individual (as opposed to \texttt{Agg})
+\\ \textit{[object]}\texttt{Lvl} & - & Level
+\\ \textit{[object]}\texttt{Rto} & - & Ratio
+\\ \textit{[object]}\texttt{Bot} & - & Lower value in some range
+\\ \textit{[object]}\texttt{Top} & - & Upper value in some range
+\\ \textit{[object]}\texttt{Min} & - & Minimum possible value
+\\ \textit{[object]}\texttt{Max} & - & Maximum possible value
+\\ \textit{[object]}\texttt{Cnt} & - & Continuous-time value
+\\ \textit{[object]}\texttt{Dsc} & - & Discrete-time value
+\\ \textit{[object]}\texttt{Shk} & - & Shock
+\\ \textit{[object]}\texttt{Trg} & - & The `target' value of a variable
+\\ \textit{[object]}\texttt{Rte} & - & A `rate' variable like the discount rate $\discRte$
+\\ \textit{[object]}\texttt{Fac} & - & A factor variable like the discount factor $\DiscFac$
+\\ \textit{[object]}\texttt{Amt} & - & An amount, like \texttt{TaxAmt} which might be lump-sum
 \\ 	\hline
 	\end{tabular}
 	\caption{General Purpose Modifiers}
@@ -26,8 +30,8 @@ Shocks will generally be represented by finite vectors of outcomes and their pro
 	\centering
 	\begin{tabular}{||>{\ttfamily}ccc||}
 		\hline
-\texttt{Prbs} & - & Probabilities of outcomes (e.g. \texttt{PermShkPrbs} for permanent shock vector)
-\\ \texttt{Vals} & - & Values (e.g., mean one shock satisfies \texttt{PermShkVals} . \texttt{PermShkPrbs} = 1)
+   \textit{[object]}\texttt{Prbs} & - & Probabilities of outcomes (e.g. \texttt{PermShkPrbs} for permanent shocks)
+\\ \textit{[object]}\texttt{Vals} & - & Values (e.g., for mean one shock \texttt{PermShkVals} . \texttt{PermShkPrbs} = 1)
 \\ 	\hline
 	\end{tabular}
 	\caption{Probabilities}
@@ -43,9 +47,10 @@ to steps relative to the local moment within a period, and $t$ variables to refe
 	\centering
 	\begin{tabular}{||>{\ttfamily}ccc||}
 		\hline
-   \textit{[object]}tm1 & - & object in period $t$ minus 1
-\\ \textit{[object]}tm2 & - & object in period $t$ minus 2
+   \textit{[object]}tm2 & - & object in period $t$ minus 2
+\\ \textit{[object]}tm1 & - & object in period $t$ minus 1
 \\ \textit{[object]}Now & - & object in period $t$
+\\ \textit{[object]}t   & - & object in period $t$ (alternative definition)
 \\ \textit{[object]}tp1 & - & object in $t$ plus 1
 \\ \textit{[object]}tpn & - & object in $t$ plus $n$
 \\ \textit{[object]}Prev & - & object in previous subperiod
@@ -55,22 +60,6 @@ to steps relative to the local moment within a period, and $t$ variables to refe
 	\end{tabular}
 	\caption{Timing}
 	\label{table:Timing}
-\end{table}
-
-For testing and debugging purposes, it is useful to compare numerical
-values constructed by the code to analytical results available in some
-special cases.  To distinguish the corresponding object in the two cases,
-we use
-\begin{table}[h]
-	\centering
-	\begin{tabular}{||>{\ttfamily}ccc||}
-		\hline
-Anl & - & The analytical result
-\\ Num & - & The numerical result
-\\ \hline
-	\end{tabular}
-	\caption{}
-	\label{table:AnlVsNum}
 \end{table}
 
 
