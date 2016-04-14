@@ -16,7 +16,10 @@ That is the spirit in which we offer preferred interpretations for the Roman let
 
 When an alternative is needed with a meaning similar to, but distinct from, the definitions below, please use a multi-letter name to represent it.  For example, please do not use $W$ for wealth (if some measure of wealth that differs from $\ALev$, $\BLev$, $\HLev$, or $\NLev$ is needed); instead use, say, \texttt{Wlth} or \texttt{Wealth}.  (Some exemplars follow in a subsequent section).
 
-Finally, some of the definitions below are prohibitions; these are based on many years of experience which have shown that use of the prohibited variable name generates more confusion than clarity.  
+Some of the definitions below are prohibitions; these are based on many years of experience which have shown that use of the prohibited variable name generates more confusion than clarity.  
+
+Finally, if you insist on deviating from these recommendations, we strongly suggest that you make your deviations clear to those reading or using your code.  An excellent way to do this is by including a Python dictionary \texttt{notation} as an attribute of whatever class you use as your base.  That way a user who wants to decipher what you mean by `s' can do so by accessing \texttt{notation.s} directly in Python and at any time.  This is what we have done in \texttt{ConsumptionSavingModel.py}.
+
 \pagebreak
 
 \begin{table}[h]
